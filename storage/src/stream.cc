@@ -231,7 +231,7 @@ int stream::write(misc::shared_ptr<io::data> const& data) {
       status->ctime = ss->last_check;
       status->index_id = index_id;
       status->interval
-        = static_cast<unsigned int>(ss->check_interval * 60);
+        = static_cast<unsigned int>(ss->check_interval * ss->interval_length);
       status->is_for_rebuild = false;
       status->rrd_len = rrd_len;
       status->state = ss->last_hard_state;
@@ -295,7 +295,7 @@ int stream::write(misc::shared_ptr<io::data> const& data) {
               perf(new storage::metric);
             perf->ctime = ss->last_check;
             perf->interval
-              = static_cast<unsigned int>(ss->check_interval * 60);
+              = static_cast<unsigned int>(ss->check_interval * ss->interval_length);
             perf->is_for_rebuild = false;
             perf->metric_id = metric_id;
             perf->name = pd.name();

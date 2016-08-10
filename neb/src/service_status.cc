@@ -190,6 +190,9 @@ mapping::entry const service_status::entries[] = {
     &service_status::host_name,
     ""),
   mapping::entry(
+    &service_status::interval_length,
+    NULL),
+  mapping::entry(
     &service_status::is_flapping,
     "flapping"),
   mapping::entry(

@@ -1165,6 +1165,7 @@ int neb::callback_host(int callback_type, void* data) {
       my_host->icon_image = h->icon_image;
     if (h->icon_image_alt)
       my_host->icon_image_alt = h->icon_image_alt;
+    my_host->interval_length = ::config->interval_length();
     my_host->is_flapping = h->is_flapping;
     my_host->last_check = h->last_check;
     my_host->last_hard_state = h->last_hard_state;
@@ -1367,6 +1368,7 @@ int neb::callback_host_status(int callback_type, void* data) {
         throw (exceptions::msg() << "could not find ID of host '"
                << h->name << "'");
     }
+    host_status->interval_length = ::config->interval_length();
     host_status->is_flapping = h->is_flapping;
     host_status->last_check = h->last_check;
     host_status->last_hard_state = h->last_hard_state;
@@ -1853,6 +1855,7 @@ int neb::callback_service(int callback_type, void* data) {
       my_service->icon_image = s->icon_image;
     if (s->icon_image_alt)
       my_service->icon_image_alt = s->icon_image_alt;
+    my_service->interval_length = ::config->interval_length();
     my_service->is_flapping = s->is_flapping;
     my_service->is_volatile = s->is_volatile;
     my_service->last_check = s->last_check;
@@ -2066,6 +2069,7 @@ int neb::callback_service_status(int callback_type, void* data) {
     service_status->execution_time = s->execution_time;
     service_status->flap_detection_enabled = s->flap_detection_enabled;
     service_status->has_been_checked = s->has_been_checked;
+    service_status->interval_length = ::config->interval_length();
     service_status->is_flapping = s->is_flapping;
     service_status->last_check = s->last_check;
     service_status->last_hard_state = s->last_hard_state;

@@ -181,6 +181,9 @@ mapping::entry const host_status::entries[] = {
     "host_id",
     mapping::entry::invalid_on_zero),
   mapping::entry(
+    &host_status::interval_length,
+    NULL),
+  mapping::entry(
     &host_status::is_flapping,
     "flapping"),
   mapping::entry(

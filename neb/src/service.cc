@@ -309,6 +309,9 @@ mapping::entry const service::entries[] = {
     "service_id",
     mapping::entry::invalid_on_zero),
   mapping::entry(
+    &service::interval_length,
+    NULL),
+  mapping::entry(
     &service::is_flapping,
     "flapping"),
   mapping::entry(

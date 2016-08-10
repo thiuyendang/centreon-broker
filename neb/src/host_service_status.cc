@@ -44,6 +44,7 @@ host_service_status::host_service_status()
     execution_time(0.0),
     has_been_checked(false),
     host_id(0),
+    interval_length(0),
     is_flapping(false),
     last_check(0),
     last_hard_state(4), // Pending
@@ -127,6 +128,7 @@ void host_service_status::_internal_copy(host_service_status const& hss) {
   execution_time = hss.execution_time;
   has_been_checked = hss.has_been_checked;
   host_id = hss.host_id;
+  interval_length = hss.interval_length;
   is_flapping = hss.is_flapping;
   last_check = hss.last_check;
   last_hard_state = hss.last_hard_state;

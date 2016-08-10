@@ -311,6 +311,9 @@ mapping::entry const host::entries[] = {
     "instance_id",
     mapping::entry::invalid_on_zero),
   mapping::entry(
+    &host::interval_length,
+    NULL),
+  mapping::entry(
     &host::is_flapping,
     "flapping"),
   mapping::entry(

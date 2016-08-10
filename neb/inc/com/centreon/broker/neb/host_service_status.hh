@@ -59,6 +59,7 @@ namespace                neb {
     double               execution_time;
     bool                 has_been_checked;
     unsigned int         host_id;
+    double               interval_length;
     bool                 is_flapping;
     timestamp            last_check;
     short                last_hard_state;
