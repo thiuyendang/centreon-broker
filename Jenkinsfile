@@ -78,7 +78,13 @@ try {
         sh 'cd /opt/centreon-build && git pull && cd -'
         sh '/opt/centreon-build/jobs/broker/3.4/mon-broker-package.sh debian9'
       }
-    }
+    },
+    'opensuse423': {
+      node {
+        sh 'cd /opt/centreon-build && git pull && cd -'
+        sh '/opt/centreon-build/jobs/broker/3.4/mon-broker-package.sh opensuse423'
+      }
+    },
     if ((currentBuild.result ?: 'SUCCESS') != 'SUCCESS') {
       error('Package stage failure.');
     }
